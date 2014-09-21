@@ -13,8 +13,16 @@ class ProductsController < ApplicationController
     end
     def create
         @product = Product.new(product_params)
-        @product.save
-        redirect_to :action => :index
+        respond_to do |format| 
+            if @product.save 
+                format.html { redirect_to '/', notice: 'Product was successfully created.' } 
+                format.json { render :show, status: :created, location: @product } 
+            else 
+                format.html { render :new } 
+                format.json { render json: @product.errors, status: :unprocessable_entity } 
+            end 
+        end 
+
     end
     def destroy
         @product.destroy
