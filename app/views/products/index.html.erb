@@ -1,0 +1,18 @@
+<h1> All lists </h1>
+<% @products.each do |i| %>
+    <div>
+        <%= i %>
+    </div>
+    <div>
+        <%= i.title %>
+    </div>
+    <div>
+        <%= i.description %>
+    </div>
+    <div>
+        <%= i.image_url %>
+    </div>
+    <div>
+        <%= i.price %>
+    </div>
+<% end %>
