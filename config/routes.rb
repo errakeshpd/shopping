@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
     
 
+  resources :carts
+
    root 'products#index'
    get 'store/index'
    
