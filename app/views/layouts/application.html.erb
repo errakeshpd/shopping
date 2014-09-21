@@ -4,11 +4,27 @@
   <title>Shopping</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery-1.10.2.min.js', 'data-turbolinks-track' => true %>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script> 
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="row">
+    <%= render 'include/header' %>
+</div>
+<div class="row">
+    <div class="col-md-2 left-nav-color left-nav-height">
+        <%= render 'include/leftnavigation' %>
+    </div>
+    <div class="col-md-10">
+        <%= yield %>
+    </div>
+</div>
+<div class="row">
+    <%= render 'include/footer' %>
+</div>
 
 </body>
 </html>

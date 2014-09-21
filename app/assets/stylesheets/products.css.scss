@@ -1,3 +1,38 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.head-color{
+    color:white;
+    background-color:#005387;
+}
+.left-nav-height{
+    height:auto;
+}
+.left-nav-color{
+  background-color:#0A3151;
+  color:white;
+}
+.foot-color{
+    height:50px;
+    color:white;
+    background-color:black;
+}
+.navbar{
+    margin-bottom:0px;
+}
+.nav-tabs {
+        border-bottom: none;
+}
+.nav-tabs > li{
+    background-color:green;
+    margin-right:-15px;
+    a {
+        color:white;
+    width:100%;
+    border-radius:0px;
+}
+a:hover{
+    color:black;
+}
+}
