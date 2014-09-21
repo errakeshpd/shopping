@@ -1,0 +1,19 @@
+<% @products.each do |i| %>
+<div class="col-md-2 prod_list">
+    <div class="text-danger">
+        <%= i %>
+    </div>
+    <div class="text-info">
+        <%= i.title %>
+    </div>
+    <div class="text-primary">
+        <%= i.description %>
+    </div>
+    <div class="text-success">
+        <%= i.image_url %>
+    </div>
+    <div class="text-warning">
+        <%= i.price %>
+    </div>
+</div>
+<% end %>
