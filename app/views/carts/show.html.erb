@@ -1,13 +1,20 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end%>
-<h2>Your Pragmatic Cart</h2>
-<ul>    
+<h2>my Cart</h2>
+<table>    
     <% @cart.line_items.each do |item| %>
-        <li><%= item.quantity %> &times; <%= item.product.title %></li>
+        <tr>
+            <td><%= item.quantity %> &times; </td>
+            <td><%= item.product.title %></td>
+            <td><%= itme.total_price %> </td>
+        </tr>
     <% end %>
-    </ul>
+    <tr>
+        <td><%= @cart.total_price %></td>
+    </tr>
+    </table>
 
-
+    <%= button_to 'Empty cart', @cart, method: :delete,data: { confirm: "Are you sure" } %> 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
