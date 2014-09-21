@@ -10,8 +10,8 @@
     height:auto;
 }
 .left-nav-color{
-  background-color:#0A3151;
-  color:white;
+    background-color:#0A3151;
+    color:white;
 }
 .foot-color{
     height:50px;
@@ -22,17 +22,25 @@
     margin-bottom:0px;
 }
 .nav-tabs {
-        border-bottom: none;
+    border-bottom: none;
 }
 .nav-tabs > li{
     background-color:green;
     margin-right:-15px;
     a {
         color:white;
-    width:100%;
-    border-radius:0px;
+        width:100%;
+        border-radius:0px;
+    }
+    a:hover{
+        color:black;
+    }
 }
-a:hover{
-    color:black;
+.navbar-brand{
+    a{
+        color:white;
+    }
 }
+.main-bg{
+    background-color:#F7F5EE;
 }
