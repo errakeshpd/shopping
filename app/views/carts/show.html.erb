@@ -2,16 +2,16 @@
 <p id="notice"><%= notice %></p>
 <% end%>
 <h2>my Cart</h2>
-<table>    
+<table>
     <% @cart.line_items.each do |item| %>
         <tr>
             <td><%= item.quantity %> &times; </td>
             <td><%= item.product.title %></td>
-            <td><%= itme.total_price %> </td>
+            <td><%= item.total_price %> </td>
         </tr>
     <% end %>
     <tr>
-        <td><%= @cart.total_price %></td>
+        <td>Total Price :<%= @cart.total_price %></td>
     </tr>
     </table>
 

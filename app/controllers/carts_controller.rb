@@ -10,6 +10,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @cart = Cart.find(set_cart)
   end
 
   # GET /carts/new
@@ -54,18 +55,18 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-      @cart.destroy if @cart.id == session[:cart_id]
-      session[:cart_id] = nil
+      if @cart.destroy
     respond_to do |format|
-      format.html { redirect_to stores_url, notice: 'your cart currently empty.' }
+      format.html { redirect_to stores_url, notice: 'Cart was successfully destroyed.' }
       format.json { head :no_content }
     end
+      end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      @cart = params[:id]
     end
 
     def invalid_cart
